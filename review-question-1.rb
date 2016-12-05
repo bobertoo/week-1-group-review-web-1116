@@ -64,7 +64,7 @@ pokemon = [
 pokemon.map do |poke|
   if poke[:name] == "bulbasaur"
     poke[:abilities].each do |able|
-      puts "1st:\n\n#{able[:ability][:url]}\n"
+      puts "1st:\n#{able[:ability][:url]}"
     end
   end
 end
@@ -74,26 +74,26 @@ base_exp = pokemon.find do |poke|
   poke[:base_experience] > 40
   poke
 end
-puts "2nd:\n\n#{base_exp}\n"
+puts "2nd:\n#{base_exp}"
 
 ## 3rd
 all_base_exp = pokemon.select do |poke|
   poke[:base_experience] > 40
   poke
 end
-puts "3rd:\n\n#{all_base_exp}\n"
+puts "3rd:\n#{all_base_exp}"
 
 ## 4th ??
 poke_name = pokemon.map do |poke|
   poke[:name]
 end
-puts "4th\n\n#{poke_name.inspect}"
+puts "4th\n#{poke_name.inspect}"
 
 ##5th
 fat_poke = pokemon.any? do |poke|
   poke[:weight] > 60
 end
-puts "5th:\n\n#{fat_poke}"
+puts "5th:\n#{fat_poke}"
 
 
 # How would you get the url for Bulbasaur's ability?
